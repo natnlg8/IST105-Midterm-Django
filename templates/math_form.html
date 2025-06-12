@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+</head>
+<body>
+<main>
+    <div class="page-content">
+        <h1>Final Exam</h1>
+        <form method="POST" class="input-form">
+            {% csrf_token %}
+            {{ form }}
+            <button class="submit-button" type="submit">Calculate</button>
+        </form>
+    </div>
+</main>
+<footer>
+</footer>
+</body>
+</html>

@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Result</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+</head>
+<body>
+<main>
+    <div class="page-content">
+        <h1>Final Exam - Result</h1>
+    {% if respond %}
+
+        {% if respond.error %}
+            <div><p>{{ respond.error }}</p></div>
+        {% else %}
+            <div><p>Result: {{ respond.result }}</p></div>
+        {% endif %}
+        <br>
+        <div>
+            <a href="{% url 'calculator' %}" class="submit-button" style="padding: 5px 10px; text-decoration: none;">Retry</a>
+        </div>
+    {% endif %}
+     </div>
+</main>
+<footer>
+</footer>
+</body>
+</html>
